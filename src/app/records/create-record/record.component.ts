@@ -13,6 +13,7 @@ export class CreateRecordComponent {
   email: string;
   mobileNumber: number;
 
+
   @Output() inputData = new EventEmitter<{name: string, email: string, mobileNumber: number}>();
 
   onSubmit(){
@@ -21,4 +22,5 @@ export class CreateRecordComponent {
 
   this.addForm.reset();
   }
+
 }

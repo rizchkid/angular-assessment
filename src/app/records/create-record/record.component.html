@@ -4,11 +4,12 @@
       <input
       type="text"
       class="form-control"
-      id="username"
+      id="name"
       style="width: 30%;"
       name="name"
       [(ngModel)]="name"
       required>
+
     </div>
 
     <div class="form-group">
@@ -27,16 +28,19 @@
     <div class="form-group">
       <label>Mobile Number</label>
       <input
-      type="number"
+      type="text"
       class="form-control"
       id="mobile=number"
       style="width: 30%;"
       name="mobileNumber"
       onkeydown="return event.keyCode !== 69"
       [(ngModel)]="mobileNumber"
-      required>
-    </div>
+      required
+      minlength="11"
+      maxlength="11">
 
+    </div>
+    <!-- (keydown)="check($event)"> -->
     <!-- add the if else if add or edit -->
     <button
     type="submit"
