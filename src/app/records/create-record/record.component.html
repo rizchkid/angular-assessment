@@ -1,0 +1,36 @@
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Name</label>
+    <input
+    type="text"
+    class="form-control"
+    id="username"
+    placeholder="Name"
+    style="width: 30%;"
+    name="name"
+    [(ngModel)]="name" >
+    </div>
+    <div class="form-group">
+      <label>E-mail</label>
+      <input
+      type="email"
+      class="form-control"
+      id="email" placeholder="E-mail"
+      style="width: 30%;"
+      name="email"
+      [(ngModel)]="email" >
+    </div>
+    <div class="form-group">
+      <label>Mobile Number</label>
+      <input
+      type="number"
+      class="form-control"
+      id="mobile=number"
+      placeholder="Mobile Number"
+      style="width: 30%;"
+      name="mobileNumber"
+      [(ngModel)]="mobileNumber" >
+    </div>
+    <!-- add the if else if add or edit -->
+    <button type="submit" class="btn btn-primary">ADD/EDIT</button>
+  </form>

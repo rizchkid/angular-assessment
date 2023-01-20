@@ -1,0 +1,30 @@
+
+.action-buttons button{
+  margin: 3px;
+  text-align: center;
+  font-weight: bold;
+}
+.action-buttons {
+  text-align: center;
+}
+
+.head-container{
+  padding-left: 3%;
+}
+
+.head-container table{
+  max-width: 97%;
+}
+
+td {
+  vertical-align: middle;
+  text-align: left;
+  padding: 5px;
+  border-color: gray;
+}
+
+hr{
+  max-width: 97%;
+  font-size: px;
+}
+

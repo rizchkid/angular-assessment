@@ -1,0 +1,30 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form {
+  margin-left: 3%;
+}
+
+label{
+  font-weight: bold;
+}
+
+.form-group, .form-control{
+  margin-bottom: 10px;
+}
+
+.form-control{
+  border-color: black;
+}
+
+button{
+  font-weight: bold;
+}
+
+input:placeholder-shown {
+  font-style: italic;
+}
+
