@@ -1,9 +1,9 @@
-
 .action-buttons button{
   margin: 3px;
   text-align: center;
   font-weight: bold;
 }
+
 .action-buttons {
   text-align: center;
 }
@@ -23,8 +23,21 @@ td {
   border-color: gray;
 }
 
-hr{
-  max-width: 97%;
-  font-size: px;
+th {
+  vertical-align: middle;
+  border-color: gray;
 }
 
+hr{
+  max-width: 97%;
+  height: 12px;
+}
+
+thead{
+  background-color: #A100FF;
+  color: white;;
+}
+
+.action-col{
+  text-align: center;
+}

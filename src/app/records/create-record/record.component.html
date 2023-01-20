@@ -1,36 +1,45 @@
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
     <div class="form-group">
       <label>Name</label>
-    <input
-    type="text"
-    class="form-control"
-    id="username"
-    placeholder="Name"
-    style="width: 30%;"
-    name="name"
-    [(ngModel)]="name" >
+      <input
+      type="text"
+      class="form-control"
+      id="username"
+      style="width: 30%;"
+      name="name"
+      [(ngModel)]="name"
+      required>
     </div>
+
     <div class="form-group">
       <label>E-mail</label>
       <input
       type="email"
       class="form-control"
-      id="email" placeholder="E-mail"
+      id="email"
       style="width: 30%;"
       name="email"
-      [(ngModel)]="email" >
+      [(ngModel)]="email"
+      required
+      email>
     </div>
+    <!-- on keydown blocks letter 'e' as an input of a number -->
     <div class="form-group">
       <label>Mobile Number</label>
       <input
       type="number"
       class="form-control"
       id="mobile=number"
-      placeholder="Mobile Number"
       style="width: 30%;"
       name="mobileNumber"
-      [(ngModel)]="mobileNumber" >
+      onkeydown="return event.keyCode !== 69"
+      [(ngModel)]="mobileNumber"
+      required>
     </div>
+
     <!-- add the if else if add or edit -->
-    <button type="submit" class="btn btn-primary">ADD/EDIT</button>
+    <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!f.valid">ADD/EDIT</button>
   </form>

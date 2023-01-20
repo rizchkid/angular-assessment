@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./record.component.css']
 })
 export class CreateRecordComponent {
+  @ViewChild('f') addForm: NgForm;
   name: string;
   email: string;
   mobileNumber: number;
@@ -15,5 +17,8 @@ export class CreateRecordComponent {
 
   onSubmit(){
   this.inputData.emit({name: this.name, email: this.email, mobileNumber: this.mobileNumber});
+  console.log(this.addForm);
+
+  this.addForm.reset();
   }
 }
