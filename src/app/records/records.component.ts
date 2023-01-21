@@ -1,19 +1,29 @@
-import { DataServiceService } from './../data-service.service';
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { DataServiceService } from "./../data-service.service";
+import { Component, OnInit } from "@angular/core";
+
 @Component({
-  selector: 'app-records',
-  templateUrl: './records.component.html',
-  styleUrls: ['./records.component.css']
+  selector: "app-records",
+  templateUrl: "./records.component.html",
+  styleUrls: ["./records.component.css"],
 })
-export class RecordsComponent {
-  inputStorage: {name:string, email: string, mobileNumber: number}[] = [];
+export class RecordsComponent implements OnInit {
+  newTableData: { name: string; email: string; mobileNumber: number }[] = [];
 
-  constructor(private dataService: DataServiceService){}
+  constructor(private dataService: DataServiceService) {}
 
-  onDataCreated(data: {name:string, email: string, mobileNumber: number}){
-    this.inputStorage.push(data);
-    this.dataService.createdCredential(data);
-    // console.log(data);
+  ngOnInit() {
+    this.onFetchProduct();
+  }
+
+  onDataCreated(data: { name: string; email: string; mobileNumber: number }) {
+    this.dataService
+      .createdCredential(data)
+      .subscribe(() => this.onFetchProduct());
+  }
+
+  private onFetchProduct() {
+    this.dataService.fetchCredential().subscribe((credential) => {
+      this.newTableData = credential;
+    });
   }
 }

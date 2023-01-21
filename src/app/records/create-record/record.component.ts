@@ -16,7 +16,6 @@ export class CreateRecordComponent {
   email: string;
   mobileNumber: number;
 
-
   onSubmit(){
     this.inputData.emit({name: this.name, email: this.email, mobileNumber: this.mobileNumber});
     // console.log(this.addForm);
