@@ -41,3 +41,8 @@ thead{
 .action-col{
   text-align: center;
 }
+
+.email{
+  color: blue;
+  text-decoration: underline;
+}
