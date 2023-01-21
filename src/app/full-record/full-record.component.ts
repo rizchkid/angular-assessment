@@ -15,4 +15,5 @@ display = this.dataService.dataViewing;
 ngOnInit(){
 
 }
+
 }

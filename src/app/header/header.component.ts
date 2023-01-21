@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { DataServiceService } from './../data-service.service';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
@@ -6,4 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+constructor(private dataService: DataServiceService){}
 }

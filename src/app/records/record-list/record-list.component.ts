@@ -16,6 +16,7 @@ export class RecordListComponent {
 
 
   onDisplay(displayData: { name: string; email: string; mobileNumber: number }){
+    this.dataService.dataViewing.splice(0,1);
     this.dataService.dataViewing.push(displayData);
   }
 
@@ -23,4 +24,5 @@ export class RecordListComponent {
     this.dataService.deleteCredential(id);
 
   }
+
 }
