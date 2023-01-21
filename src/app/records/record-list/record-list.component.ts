@@ -1,3 +1,4 @@
+import { DataServiceService } from './../../data-service.service';
 import { Component, Input, OnInit} from '@angular/core';
 
 @Component({
@@ -10,8 +11,16 @@ export class RecordListComponent implements OnInit {
 
 newTableData: {name: string, email: string, mobileNumber: number}[]=[];
 
+constructor(private dataService : DataServiceService){}
 
 ngOnInit(){
     this.newTableData= this.tableData;
+    this.onFetchProduct();
+  }
+
+  private onFetchProduct(){
+    this.dataService.fetchCredential().subscribe((credential)=> {
+      this.newTableData = credential;
+    })
   }
 }
