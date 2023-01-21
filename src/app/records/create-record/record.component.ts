@@ -12,6 +12,7 @@ export class CreateRecordComponent {
   @Output() inputData = new EventEmitter<{name: string, email: string, mobileNumber: number}>();
 
   allowedChars = new Set('0123456789'.split('').map((c) => c.charCodeAt(0)));
+
   name: string;
   email: string;
   mobileNumber: number;

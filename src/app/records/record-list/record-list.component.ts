@@ -21,6 +21,7 @@ export class RecordListComponent {
   }
 
   onDelete(id: string){
+    // CREATE IF ELSE HERE TO PROMPT IF REALLY SURE TO DELETE THE RERCORD
     this.dataService.deleteCredential(id);
 
   }
