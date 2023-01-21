@@ -8,7 +8,12 @@
       style="width: 30%;"
       name="name"
       [(ngModel)]="name"
-      required>
+      required
+      ngModel
+      #fName="ngModel">
+      <div>
+        <small *ngIf="fName.invalid && fName.touched">This field is required</small>
+      </div>
     </div>
 
     <div class="form-group">
@@ -21,8 +26,14 @@
       name="email"
       [(ngModel)]="email"
       required
-      email>
+      email
+      ngModel
+      #emailAddress="ngModel">
+      <div>
+        <small *ngIf="emailAddress.invalid && emailAddress.touched">Enter Valid Email</small>
+      </div>
     </div>
+
     <!-- on keydown blocks letter 'e' as an input of a number -->
     <div class="form-group">
       <label>Mobile Number</label>
@@ -38,8 +49,11 @@
       maxlength="11"
       minlength="11"
       (keydown)="check($event)"
-      >
-
+      ngModel
+      #mobileNum="ngModel">
+      <div>
+        <small *ngIf="mobileNum.invalid && mobileNum.touched">This field is required</small>
+      </div>
     </div>
     <!-- add the if else if add or edit -->
     <button
