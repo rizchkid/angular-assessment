@@ -10,6 +10,6 @@ export class RecordsComponent {
 
   onDataCreated(data: {name:string, email: string, mobileNumber: number}){
     this.inputStorage.push(data);
-    console.log(data);
+    // console.log(data);
   }
 }

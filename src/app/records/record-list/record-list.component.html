@@ -14,7 +14,7 @@
       <tr *ngFor="let data of newTableData; let i = index">
         <th scope="row">{{i + 1}}</th>
         <td>{{data.name  | titlecase}}</td>
-        <td><a href="#">{{data.email | lowercase}}</a></td>
+        <td><a href="mailto:date.email.com">{{data.email | lowercase}}</a></td>
         <td>{{data.mobileNumber}}</td>
         <td>
           <div class="action-buttons">
