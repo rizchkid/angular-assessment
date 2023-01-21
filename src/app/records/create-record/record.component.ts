@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -17,17 +16,12 @@ export class CreateRecordComponent {
   email: string;
   mobileNumber: number;
 
-  constructor(private http: HttpClient){}
 
   onSubmit(){
     this.inputData.emit({name: this.name, email: this.email, mobileNumber: this.mobileNumber});
     // console.log(this.addForm);
     this.addForm.reset();
-    this.http.post('https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/records.json',
-      this.inputData
-    ).subscribe(responseData =>{
-        console.log(responseData)
-    });
+
   }
 
   check(event: KeyboardEvent) {
@@ -37,10 +31,6 @@ export class CreateRecordComponent {
     }
   }
 
-  // onCreateEvent(postData: {name: string; email:  string; mobileNumber:number}){
-  //   // Send HTTP REQUEST
-  //   console.log(postData);
-  // }
 
 }
 
