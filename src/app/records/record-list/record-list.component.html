@@ -18,9 +18,10 @@
         <td>{{data.mobileNumber}}</td>
         <td>
           <div class="action-buttons">
-            <button type="button" class="btn btn-success" routerLink="../record" style= "width: 30%;">View</button>
+            <button type="button" class="btn btn-success" routerLink="../record" style= "width: 30%;" (click)="onDisplay(data)">View</button>
             <button type="button" class="btn btn-warning" style= "width: 30%;">Update</button>
-            <button type="button" class="btn btn-danger" style= "width: 30%;">Delete</button>
+            <button type="button" class="btn btn-danger" style= "width: 30%;" (click)="onDelete(data.id)">Delete</button>
+
           </div>
         </td>
       </tr>

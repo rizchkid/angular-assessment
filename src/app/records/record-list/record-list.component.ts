@@ -1,4 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { RecordsComponent } from './../records.component';
+import { DataServiceService } from './../../data-service.service';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
   selector: "records-record-list",
@@ -9,5 +11,16 @@ export class RecordListComponent {
   @Input() tableData: { name: string; email: string; mobileNumber: number }[] =
     [];
 
-  constructor() {}
+  constructor(private dataService: DataServiceService,
+              private deleteService: RecordsComponent) {}
+
+
+  onDisplay(displayData: { name: string; email: string; mobileNumber: number }){
+    this.dataService.dataViewing.push(displayData);
+  }
+
+  onDelete(id: string){
+    this.dataService.deleteCredential(id);
+
+  }
 }

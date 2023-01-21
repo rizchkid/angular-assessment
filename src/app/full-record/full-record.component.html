@@ -1,7 +1,7 @@
-<div class="container">
-  <h1>Name:</h1>
-  <h1>Email:</h1>
-  <h1>Contact Number:</h1>
+<div class="container" *ngFor="let data of display">
+  <h1>Name: {{ data.name | titlecase}}</h1>
+  <h1>Email: {{ data.email | lowercase}}</h1>
+  <h1>Contact Number:{{ data.mobileNumber }}</h1>
   <br>
   <button type="button" class="btn btn-secondary" routerLink="../records"> ← Back</button>
 </div>

@@ -6,6 +6,8 @@ import { map } from "rxjs";
   providedIn: "root",
 })
 export class DataServiceService {
+
+  dataViewing: {name: string, email: string, mobileNumber: number}[]=[]
   constructor(private http: HttpClient) {}
 
   createdCredential(data: {
@@ -35,4 +37,8 @@ export class DataServiceService {
         })
       );
   }
+    deleteCredential(id: string){
+      this.http.delete("https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials/"+id+'.json')
+      .subscribe();
+    }
 }

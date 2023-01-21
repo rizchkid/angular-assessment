@@ -12,16 +12,16 @@ export class RecordsComponent implements OnInit {
   constructor(private dataService: DataServiceService) {}
 
   ngOnInit() {
-    this.onFetchProduct();
+    this.onFetchCredential();
   }
 
   onDataCreated(data: { name: string; email: string; mobileNumber: number }) {
     this.dataService
       .createdCredential(data)
-      .subscribe(() => this.onFetchProduct());
+      .subscribe(() => this.onFetchCredential());
   }
 
-  private onFetchProduct() {
+   onFetchCredential() {
     this.dataService.fetchCredential().subscribe((credential) => {
       this.newTableData = credential;
     });
