@@ -29,6 +29,8 @@
       email
       ngModel
       #emailAddress="ngModel">
+
+      <!-- /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ -->
       <div>
         <small *ngIf="emailAddress.invalid && emailAddress.touched">Enter Valid Email</small>
       </div>

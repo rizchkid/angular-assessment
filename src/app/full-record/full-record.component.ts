@@ -24,10 +24,8 @@ export class FullRecordComponent implements OnInit {
     //OBJECT DESTRUCTURING
     // This line will destructure every data from route params, in this case { id } was destructured from route
     const { id } = this.route.snapshot.params;
-
     // This will fetch the credential that you're trying to access or view
     this.dataService.getIndividualCredential(id).subscribe((data) => {
-      // console.log("Data: ", data);
       this.displayData = data as Credential;
     });
   }
