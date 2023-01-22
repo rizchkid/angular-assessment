@@ -13,7 +13,6 @@ export class RecordListComponent {
     [];
 
   constructor(
-    // private dataService: DataServiceService,
     private deleteService: RecordsComponent,
     private router: Router
   ) {}
@@ -22,9 +21,6 @@ export class RecordListComponent {
     // This line of code it to programmatically route to the record detail page with the proper ID
     // template literal $
     this.router.navigate([`/record/${id}`]);
-
-    // this.dataService.dataViewing.splice(0, 1);
-    // this.dataService.dataViewing.push(displayData);
   }
 
   onDelete(id: string) {
