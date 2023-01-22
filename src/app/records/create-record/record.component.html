@@ -36,14 +36,13 @@
 
     <!-- on keydown blocks letter 'e' as an input of a number -->
     <div class="form-group">
-      <label>Mobile Number</label>
+      <label for="mobile-number">Mobile Number</label>
       <input
       type="text"
       class="form-control"
-      id="mobile=number"
+      id="mobile-number"
       style="width: 30%;"
       name="mobileNumber"
-      onkeydown="return event.keyCode !== 69"
       [(ngModel)]="mobileNumber"
       required
       maxlength="11"
@@ -55,6 +54,45 @@
         <small *ngIf="mobileNum.invalid && mobileNum.touched">This field is required</small>
       </div>
     </div>
+
+    <!-- <div class="form-group">
+      <label for="inputState">Gender</label>
+      <select
+      id="inputState"
+      class="form-control custom-select mr-sm-2"
+      style="width: 15%;"
+      placeholder="Gender"
+      name="gender"
+      [(ngModel)]="gender"
+      required
+      ngModel
+      #gencerChoice="ngModel">
+      <div>
+        <small *ngIf="gencerChoice.invalid && gencerChoice.touched">This field is required</small>
+      </div>>
+        <option selected>Choose...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="birth-day">Birthday</label>
+      <input
+      type="date"
+      class="form-control"
+      id="birth-day"
+      style="width: 15%;"
+      name="birthDay"
+      name="gender"
+      [(ngModel)]="gender"
+      required
+      ngModel
+      #gencerChoice="ngModel">
+      <div>
+        <small *ngIf="gencerChoice.invalid && gencerChoice.touched">This field is required</small>
+      </div>
+    </div> -->
     <!-- add the if else if add or edit -->
     <button
     type="submit"

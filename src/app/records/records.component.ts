@@ -21,9 +21,17 @@ export class RecordsComponent implements OnInit {
       .subscribe(() => this.onFetchCredential());
   }
 
+  onDeleteData(id: string){
+    // CREATE IF ELSE HERE TO PROMPT IF REALLY SURE TO DELETE THE RERCORD
+    this.dataService.deleteCredential(id)
+    .subscribe(()=> this.onFetchCredential());
+  }
+
    onFetchCredential() {
     this.dataService.fetchCredential().subscribe((credential) => {
       this.newTableData = credential;
     });
   }
+
+
 }

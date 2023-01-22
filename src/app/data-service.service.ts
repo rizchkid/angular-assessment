@@ -38,9 +38,9 @@ export class DataServiceService {
       );
   }
     deleteCredential(id: string){
-      this.http.delete("https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials/"+id+'.json')
-      .subscribe();
+      return this.http.delete("https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials/"+id+'.json')
     }
+
     clearViewFullRecord(){
       this.dataViewing.splice(0,1);
     }

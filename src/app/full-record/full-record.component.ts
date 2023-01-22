@@ -10,7 +10,7 @@ export class FullRecordComponent implements OnInit{
 
 constructor(private dataService: DataServiceService ){}
 
-display = this.dataService.dataViewing;
+display = this.dataService.dataViewing[0];
 
 ngOnInit(){
 
