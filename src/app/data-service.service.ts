@@ -6,8 +6,7 @@ import { map } from "rxjs";
   providedIn: "root",
 })
 export class DataServiceService {
-
-  dataViewing: {name: string, email: string, mobileNumber: number}[]=[]
+  dataViewing: { name: string; email: string; mobileNumber: number }[] = [];
   constructor(private http: HttpClient) {}
 
   createdCredential(data: {
@@ -37,11 +36,21 @@ export class DataServiceService {
         })
       );
   }
-    deleteCredential(id: string){
-      return this.http.delete("https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials/"+id+'.json')
-    }
 
-    clearViewFullRecord(){
-      this.dataViewing.splice(0,1);
-    }
+  //back tick ` if you will inject inside a string
+  deleteCredential(id: string) {
+    return this.http.delete(
+      `https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials/${id}.json`
+    );
+  }
+
+  getIndividualCredential(id: string) {
+    return this.http.get(
+      `https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials/${id}.json`
+    );
+  }
+
+  clearViewFullRecord() {
+    this.dataViewing.splice(0, 1);
+  }
 }

@@ -22,7 +22,7 @@ export class RecordsComponent implements OnInit {
   }
 
   onDeleteData(id: string){
-    // CREATE IF ELSE HERE TO PROMPT IF REALLY SURE TO DELETE THE RERCORD
+    // CREATE IF ELSE HERE TO PROMPT IF REALLY SURE TO DELETE THE RECORD
     this.dataService.deleteCredential(id)
     .subscribe(()=> this.onFetchCredential());
   }

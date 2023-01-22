@@ -18,7 +18,8 @@ import { RecordsComponent } from './records/records.component';
 const appRoute: Routes = [
   {path: '', redirectTo: 'records', pathMatch:'full'},
   {path: 'records', component : RecordsComponent},
-  {path: 'record', component : FullRecordComponent},
+  // All route that has ":id" will serve as the ID param of this link or route
+  {path: 'record/:id', component : FullRecordComponent},
   // Error Routes should be always the last route
   {path: '**', component : ErrorComponent}
 ]

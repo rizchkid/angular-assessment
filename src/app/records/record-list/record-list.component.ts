@@ -1,28 +1,30 @@
-import { RecordsComponent } from './../records.component';
-import { DataServiceService } from './../../data-service.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { RecordsComponent } from "./../records.component";
+// import { DataServiceService } from "./../../data-service.service";
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'records-record-list',
-  templateUrl: './record-list.component.html',
-  styleUrls: ['./record-list.component.css'],
+  selector: "records-record-list",
+  templateUrl: "./record-list.component.html",
+  styleUrls: ["./record-list.component.css"],
 })
 export class RecordListComponent {
   @Input() tableData: { name: string; email: string; mobileNumber: number }[] =
     [];
 
   constructor(
-    private dataService: DataServiceService,
-    private deleteService: RecordsComponent
+    // private dataService: DataServiceService,
+    private deleteService: RecordsComponent,
+    private router: Router
   ) {}
 
-  onDisplay(displayData: {
-    name: string;
-    email: string;
-    mobileNumber: number;
-  }) {
-    this.dataService.dataViewing.splice(0, 1);
-    this.dataService.dataViewing.push(displayData);
+  onDisplay(id: string) {
+    // This line of code it to programmatically route to the record detail page with the proper ID
+    // template literal $
+    this.router.navigate([`/record/${id}`]);
+
+    // this.dataService.dataViewing.splice(0, 1);
+    // this.dataService.dataViewing.push(displayData);
   }
 
   onDelete(id: string) {
