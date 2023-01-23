@@ -50,7 +50,10 @@ export class DataServiceService {
     );
   }
 
-  clearViewFullRecord() {
-    this.dataViewing.splice(0, 1);
+  updateCredentiala(id:string, data: { name: string; email: string; mobileNumber: number;}){
+    return this.http.put(
+      `https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials/${id}.json`,
+      data);
   }
+
 }

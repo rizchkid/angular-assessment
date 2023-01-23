@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { CreateRecordComponent } from './records/create-record/record.component';
-import { RecordListComponent } from './records/record-list/record-list.component';
-import { FullRecordComponent } from './full-record/full-record.component';
+import { CreateRecordComponent } from './records/create-record/create-record.component';
+import { RecordListTableComponent } from './records/records-list-table/records-list-table.component';
+import { FullRecordViewComponent } from './full-record-view/full-record-view.component';
 import { ErrorComponent } from './error/error.component';
 import { RecordsComponent } from './records/records.component';
 
@@ -19,7 +19,7 @@ const appRoute: Routes = [
   {path: '', redirectTo: 'records', pathMatch:'full'},
   {path: 'records', component : RecordsComponent},
   // All route that has ":id" will serve as the ID param of this link or route
-  {path: 'record/:id', component : FullRecordComponent},
+  {path: 'record/:id', component : FullRecordViewComponent},
   // Error Routes should be always the last route
   {path: '**', component : ErrorComponent}
 ]
@@ -30,8 +30,8 @@ const appRoute: Routes = [
     HeaderComponent,
     RecordsComponent,
     CreateRecordComponent,
-    RecordListComponent,
-    FullRecordComponent,
+    RecordListTableComponent,
+    FullRecordViewComponent,
     ErrorComponent
 
   ],

@@ -4,8 +4,8 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'records-create-record',
-  templateUrl: './record.component.html',
-  styleUrls: ['./record.component.css']
+  templateUrl: './create-record.component.html',
+  styleUrls: ['./create-record.component.css']
 })
 export class CreateRecordComponent {
   @ViewChild('f') addForm: NgForm;

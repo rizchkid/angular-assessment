@@ -1,14 +1,14 @@
-import { DataServiceService } from "./../data-service.service";
+import { DataServiceService } from "../data-service.service";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Credential } from "../../models/credential";
 
 @Component({
-  selector: "app-full-record",
-  templateUrl: "./full-record.component.html",
-  styleUrls: ["./full-record.component.css"],
+  selector: "app-full-record-view",
+  templateUrl: "./full-record-view.component.html",
+  styleUrls: ["./full-record-view.component.css"],
 })
-export class FullRecordComponent implements OnInit {
+export class FullRecordViewComponent implements OnInit {
   constructor(
     private dataService: DataServiceService,
     private route: ActivatedRoute

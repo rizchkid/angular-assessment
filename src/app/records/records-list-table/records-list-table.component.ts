@@ -1,14 +1,14 @@
 import { Router } from "@angular/router";
-import { RecordsComponent } from "./../records.component";
+import { RecordsComponent } from "../records.component";
 // import { DataServiceService } from "./../../data-service.service";
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "records-record-list",
-  templateUrl: "./record-list.component.html",
-  styleUrls: ["./record-list.component.css"],
+  selector: "records-record-list-table",
+  templateUrl: "./records-list-table.component.html",
+  styleUrls: ["./records-list-table.component.css"],
 })
-export class RecordListComponent {
+export class RecordListTableComponent {
   @Input() tableData: { name: string; email: string; mobileNumber: number }[] =
     [];
 
