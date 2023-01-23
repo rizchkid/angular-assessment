@@ -1,7 +1,8 @@
+
 import { Router } from "@angular/router";
 import { RecordsComponent } from "../records.component";
-// import { DataServiceService } from "./../../data-service.service";
-import { Component, Input } from "@angular/core";
+import { Component, Input} from "@angular/core";
+import { Credential } from "src/models/credential";
 
 @Component({
   selector: "records-record-list-table",
@@ -9,8 +10,7 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./records-list-table.component.css"],
 })
 export class RecordListTableComponent {
-  @Input() tableData: { name: string; email: string; mobileNumber: number }[] =
-    [];
+  @Input() tableData: Credential[] = [];
 
   constructor(
     private deleteService: RecordsComponent,
@@ -25,5 +25,17 @@ export class RecordListTableComponent {
 
   onDelete(id: string) {
     this.deleteService.onDeleteData(id);
+    this.router.navigate([], {
+      queryParams: {},
+    });
+  }
+
+  onUpdate(id: string) {
+    this.router.navigate([], {
+      queryParams: {
+        recordId: id,
+        editMode: true,
+      },
+    });
   }
 }

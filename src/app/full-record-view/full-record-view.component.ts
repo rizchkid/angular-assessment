@@ -17,7 +17,7 @@ export class FullRecordViewComponent implements OnInit {
   displayData: Credential = {
     name: "",
     email: "",
-    mobileNumber: 0,
+    mobileNumber: "",
   };
 
   ngOnInit() {

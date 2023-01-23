@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs";
+import { Credential } from "src/models/credential";
 
 @Injectable({
   providedIn: "root",
@@ -9,11 +10,7 @@ export class DataServiceService {
   dataViewing: { name: string; email: string; mobileNumber: number }[] = [];
   constructor(private http: HttpClient) {}
 
-  createdCredential(data: {
-    name: string;
-    email: string;
-    mobileNumber: number;
-  }) {
+  createdCredential(data: Credential) {
     return this.http.post(
       "https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials.json",
       data
@@ -21,7 +18,7 @@ export class DataServiceService {
   }
   fetchCredential() {
     return this.http
-      .get<{ [key: string]: { name: string; email: string; contact: number } }>(
+      .get<{ [key: string]: Credential }>(
         "https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials.json"
       )
       .pipe(
@@ -50,7 +47,7 @@ export class DataServiceService {
     );
   }
 
-  updateCredentiala(id:string, data: { name: string; email: string; mobileNumber: number;}){
+  updateCredentials(id:string, data: Credential){
     return this.http.put(
       `https://angular-assessment-50503-default-rtdb.asia-southeast1.firebasedatabase.app/credentials/${id}.json`,
       data);
