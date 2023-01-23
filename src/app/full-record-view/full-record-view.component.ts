@@ -18,6 +18,7 @@ export class FullRecordViewComponent implements OnInit {
     name: "",
     email: "",
     mobileNumber: "",
+    gender: ""
   };
 
   ngOnInit() {

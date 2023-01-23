@@ -1,4 +1,4 @@
-.action-buttons button{
+.action-buttons button {
   margin: 3px;
   text-align: center;
   font-weight: bold;
@@ -8,41 +8,80 @@
   text-align: center;
 }
 
-.head-container{
+.head-container {
   padding-left: 3%;
 }
 
-.head-container table{
+.head-container table {
   max-width: 97%;
 }
 
 td {
   vertical-align: middle;
-  text-align: left;
+  text-align: center;
   padding: 5px;
-  border-color: gray;
+  border-collapse: collapse;
+  border: 3px solid white;
+  font-family: Arial;
 }
 
 th {
   vertical-align: middle;
-  border-color: gray;
+  max-width: 100%;
+  border: 2px solid white;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
 }
 
-hr{
+table {
+  border-color: gray;
+  background-color: #d9d9d7;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+.id {
+  text-align: center;
+  font-weight: bold;
+}
+hr {
   max-width: 97%;
   height: 12px;
 }
 
-thead{
-  background-color: #A100FF;
-  color: white;;
+thead {
+  background-color: #a100ff;
+  color: white;
 }
 
-.action-col{
-  text-align: center;
-}
-
-.email{
+.email {
   color: blue;
   text-decoration: underline;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: white;
+  --bs-btn-border-color: #a100ff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #a100ff;
+  --bs-btn-hover-border-color: white;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #a100ff;
+  --bs-btn-active-border-color: #a100ff;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #a100ff;
+  --bs-btn-disabled-border-color: #a100ff;
+  width: 9%;
+  color: #a100ff;
+  font-family: var(--bs-font-sans-serif);
+}
+
+.btn-primary:hover {
+  color: white;
+}
+.buttons-cell {
+  background-color: white;
 }

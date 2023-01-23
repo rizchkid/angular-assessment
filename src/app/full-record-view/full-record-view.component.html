@@ -1,9 +1,8 @@
 <div class="container">
-  <h1>Name: {{ displayData.name | titlecase}}</h1>
-  <h1>Email: {{ displayData.email | lowercase}}</h1>
-  <h1>Contact Number:{{ displayData.mobileNumber }}</h1>
-  <h1>Gender: </h1>
-  <h1>Birthday: </h1>
+  <h2>Name: {{ displayData.name | titlecase}}</h2>
+  <h2>Email: {{ displayData.email | lowercase}}</h2>
+  <h2>Mobile Number:{{ displayData.mobileNumber }}</h2>
+  <h2>Gender: {{displayData.gender}}</h2>
   <br>
   <button type="button" class="btn btn-secondary" routerLink="../../records"> ← Back</button>
 </div>

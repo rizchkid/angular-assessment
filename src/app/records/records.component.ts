@@ -10,7 +10,7 @@ import { Credential } from 'src/models/credential';
   styleUrls: ['./records.component.css'],
 })
 export class RecordsComponent implements OnInit {
-  newTableData: { name: string; email: string; mobileNumber: number }[] = [];
+  newTableData: Credential[] = [];
   constructor(
     private dataService: DataServiceService,
     private route: ActivatedRoute,
