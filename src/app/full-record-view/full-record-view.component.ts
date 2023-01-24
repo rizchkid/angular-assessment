@@ -1,12 +1,12 @@
-import { DataServiceService } from "../data-service.service";
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Credential } from "../../models/credential";
+import { DataServiceService } from '../data-service.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Credential } from '../models/credential';
 
 @Component({
-  selector: "app-full-record-view",
-  templateUrl: "./full-record-view.component.html",
-  styleUrls: ["./full-record-view.component.css"],
+  selector: 'app-full-record-view',
+  templateUrl: './full-record-view.component.html',
+  styleUrls: ['./full-record-view.component.css'],
 })
 export class FullRecordViewComponent implements OnInit {
   constructor(
@@ -15,10 +15,10 @@ export class FullRecordViewComponent implements OnInit {
   ) {}
 
   displayData: Credential = {
-    name: "",
-    email: "",
-    mobileNumber: "",
-    gender: ""
+    name: '',
+    email: '',
+    mobileNumber: '',
+    gender: '',
   };
 
   ngOnInit() {

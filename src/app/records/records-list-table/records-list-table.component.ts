@@ -1,21 +1,34 @@
+import { Credential } from 'src/app/models/credential';
+import { DataServiceService } from 'src/app/data-service.service';
 
-import { Router } from "@angular/router";
-import { RecordsComponent } from "../records.component";
-import { Component, Input} from "@angular/core";
-import { Credential } from "src/models/credential";
+import { Router, ActivatedRoute } from '@angular/router';
+import { RecordsComponent } from '../records.component';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: "records-record-list-table",
-  templateUrl: "./records-list-table.component.html",
-  styleUrls: ["./records-list-table.component.css"],
+  selector: 'records-record-list-table',
+  templateUrl: './records-list-table.component.html',
+  styleUrls: ['./records-list-table.component.css'],
 })
-export class RecordListTableComponent {
+export class RecordListTableComponent implements OnInit {
   @Input() tableData: Credential[] = [];
 
+  editMode: boolean;
+  updateBtnLabel: string;
+
   constructor(
-    private deleteService: RecordsComponent,
-    private router: Router
+    private parent: RecordsComponent,
+    private router: Router,
+    private dataService: DataServiceService,
+    private route: ActivatedRoute
   ) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      this.editMode = params.editMode ? true : false;
+      this.updateBtnLabel = this.editMode ? 'Cancel' : 'Update';
+    });
+  }
 
   onDisplay(id: string) {
     // This line of code it to programmatically route to the record detail page with the proper ID
@@ -24,18 +37,17 @@ export class RecordListTableComponent {
   }
 
   onDelete(id: string) {
-    this.deleteService.onDeleteData(id);
+    this.parent.onDeleteData(id);
     this.router.navigate([], {
       queryParams: {},
     });
   }
 
   onUpdate(id: string) {
-    this.router.navigate([], {
-      queryParams: {
-        recordId: id,
-        editMode: true,
-      },
-    });
+    if (this.route.snapshot.queryParams?.editMode)
+      this.router.navigate([], {
+        queryParams: {},
+      });
+    else this.parent.onUpdateData(id);
   }
 }

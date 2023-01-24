@@ -1,11 +1,16 @@
 .container{
   padding: 50px;
   text-align: left;
-  margin: 0
-
+  margin-top: 75px;
+  margin-left: 100px;
+  border-radius: 10px;
+  border: 2px solid black;
+  max-width: 50%;
 }
 
 button{
   font-weight: bold;
   height: 100%;
 }
+
+

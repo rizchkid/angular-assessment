@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs";
-import { Credential } from "src/models/credential";
+import { Credential } from "src/app/models/credential";
 
 @Injectable({
   providedIn: "root",

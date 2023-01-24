@@ -1,10 +1,9 @@
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DataServiceService } from 'src/app/data-service.service';
-import { Credential } from 'src/models/credential';
-
+import { Credential } from 'src/app/models/credential';
 @Component({
   selector: 'records-create-record',
   templateUrl: './create-record.component.html',
@@ -18,7 +17,8 @@ export class CreateRecordComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataServiceService
+    private dataService: DataServiceService,
+    private router: Router
   ) {}
 
   name: string;
@@ -53,7 +53,7 @@ export class CreateRecordComponent implements OnInit {
       name: this.name,
       email: this.email,
       mobileNumber: this.mobileNumber,
-      gender: this.gender,
+      gender: this.gender
     });
     this.addForm.reset();
   }

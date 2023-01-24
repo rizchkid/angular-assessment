@@ -17,6 +17,7 @@ label{
 
 button{
   font-weight: bold;
+  margin-top: 5px;
 }
 
 
@@ -64,4 +65,11 @@ option[value=""][disabled] {
 }
 option {
   color: #000;
+}
+
+select{
+    border-color: black;
+    margin-bottom: 2px;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
 }

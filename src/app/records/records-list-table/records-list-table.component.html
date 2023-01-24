@@ -19,7 +19,7 @@
         <td class="buttons-cell rounded">
           <div class="action-buttons">
             <button type="button" class="btn btn-primary" routerLink="../record" style= "width: 30%;" (click)="onDisplay(data.id)">View</button>
-            <button type="button" class="btn btn-primary" style= "width: 30%;" (click)="onUpdate(data.id)">Update</button>
+            <button type="button" class="btn btn-primary" style= "width: 30%;" (click)="onUpdate(data.id)">{{updateBtnLabel}}</button>
             <button type="button" class="btn btn-primary" style= "width: 30%;" (click)="onDelete(data.id)">Delete</button>
           </div>
         </td>

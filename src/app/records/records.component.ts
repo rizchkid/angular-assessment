@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DataServiceService } from './../data-service.service';
 import { Component, OnInit } from '@angular/core';
-import { Credential } from 'src/models/credential';
+import { Credential } from '../models/credential';
 
 @Component({
   selector: 'app-records',
@@ -48,5 +48,15 @@ export class RecordsComponent implements OnInit {
     this.dataService.fetchCredential().subscribe((credential) => {
       this.newTableData = credential;
     });
+  }
+
+  onUpdateData(id: string){
+    this.router.navigate([], {
+      queryParams: {
+        recordId: id,
+        editMode: true,
+      },
+    }
+    );
   }
 }
